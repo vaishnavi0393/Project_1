@@ -16,7 +16,7 @@
     </head>
     <body>
         <div id="slct" class="container">
-            <form action="">
+            <form>
                     <input id="lselect" type="radio" class="col mt-3" name="slct-type" checked>
                     <label for="login" class="col" ><b>LOGIN  <i>Already a user?</i></b></label>
 
@@ -27,21 +27,24 @@
                 
             </form>     
         </div>
-        <div id="signup-div" style="display: none;" class="container mt-3">
+        <div id="signup-div" class="container mt-3">
             <h3>Sign Up</h3>
-            <form action="" method="">
+            <form  name="s_form" action="" method="" onsubmit="validateForm(name)">
                     <div class="">
                         <label for="name" class="form-label"><b>Name</b></label>
                         <input type="text" class="form-control" id="uname" placeholder="Name" name="uname" required>
+                        <p class="uname_msg"></p>
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="email" class="form-label"><b>Email / Phone Number</b></label>
                         <input type="text" class="form-control" id="new_email" placeholder="Email/phone number" name="email" required>
+                        <p class="email_msg"></p>
                     </div>
                     <div class="mb-3">
                         <label for="psw" class="form-label"><b>Password</b></label>
                         <input type="password" class="form-control" id="new_password" placeholder="Create Password" name="psw" required>
                         <i name="vis_psw" class="glyphicon glyphicon-eye-close p-2"></i>
+                        <p class="psw_msg"></p>
                     </div>
                     <div class="">
                         <label class="form-check-label">
@@ -51,18 +54,19 @@
                     </div>
             </form>
         </div>
-        <div id="login-div" style="display: block;" class="container mt-3">
+        <div id="login-div" class="container mt-3">
             <h3>Login</h3>
-            <form action="" method="">
+            <form name="l_form" action="" method="" onsubmit="validateForm(name)">
                     <div class="mb-3 mt-3">
                         <label for="email" class="form-label"><b>Email / Phone Number</b></label>
                         <input type="text" class="form-control" id="email" placeholder="Email/phone number" name="email" required>
+                        <p class="email_msg"></p>
                     </div>
                     <div class="mb-3">                        
                         <label for="psw" class="form-label"><b>Password</b></label>
                         <input type="password" class="form-control" id="password" placeholder="Enter Password" name="psw" required>
                         <i name="vis_psw" title="Show Password" class="glyphicon glyphicon-eye-close p-2"></i>
-                            
+                        <p class="psw_msg"></p>
                     </div>
                     <div class="">
                         <label class="form-check-label">
