@@ -1,6 +1,6 @@
+
 body {
     background-image: url("images/background.jpeg");
-
 }
 
 #slct {
@@ -22,4 +22,7 @@ body {
     display: none;
 }
 
+.uname_msg, .email_msg, .psw_msg {
 
+    color: red;
+}

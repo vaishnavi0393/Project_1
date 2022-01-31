@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Latest compiled and minified CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+        <link href="lib/icons-1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="lib/css/bootstrap-utilities.min.css" rel="stylesheet"> 
+        <script src="lib/js/bootstrap.min.js"></script>
+        <script src="lib/js/jquery.min.js"></script>
+
         <link rel="stylesheet" href="style.css">
         <title>Hello Bookies</title>
-        <!-- add icon link -->
         <link rel = "icon" href ="images/icon.png" type = "image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8" lang="en">
+        <meta http-equiv="Content-Security-Policy" 
+            content="default-src 'self';
+                    img-src 'self';
+                    style-src 'self';
+                    script-src 'self' ;">
     </head>
     <body>
         <div id="slct" class="container">
@@ -29,13 +33,13 @@
         </div>
         <div id="signup-div" class="container mt-3">
             <h3>Sign Up</h3>
-            <form  name="s_form" action="" method="" onsubmit="validateForm(name)">
-                    <div class="">
-                        <label for="name" class="form-label"><b>Name</b></label>
+            <form  name="s_form" action="" method="">
+                    <div class="mb-3">
+                        <label for="uname" class="form-label"><b>Name</b></label>
                         <input type="text" class="form-control" id="uname" placeholder="Name" name="uname" required>
                         <p class="uname_msg"></p>
                     </div>
-                    <div class="mb-3 mt-3">
+                    <div class="mb-3">
                         <label for="email" class="form-label"><b>Email / Phone Number</b></label>
                         <input type="text" class="form-control" id="new_email" placeholder="Email/phone number" name="email" required>
                         <p class="email_msg"></p>
@@ -43,21 +47,18 @@
                     <div class="mb-3">
                         <label for="psw" class="form-label"><b>Password</b></label>
                         <input type="password" class="form-control" id="new_password" placeholder="Create Password" name="psw" required>
-                        <i name="vis_psw" class="glyphicon glyphicon-eye-close p-2"></i>
+                            <i name="vis_psw" title="Show Password" class="bi bi-eye-slash-fill p-2"></i>
                         <p class="psw_msg"></p>
                     </div>
-                    <div class="">
-                        <label class="form-check-label">
-                        <input type="checkbox"class="form-check-input"  name="remember"> Remember me
-                        </label>
+                    <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Sign up</button>
                     </div>
             </form>
         </div>
         <div id="login-div" class="container mt-3">
             <h3>Login</h3>
-            <form name="l_form" action="" method="" onsubmit="validateForm(name)">
-                    <div class="mb-3 mt-3">
+            <form name="l_form" action="" method="">
+                    <div class="mb-3">
                         <label for="email" class="form-label"><b>Email / Phone Number</b></label>
                         <input type="text" class="form-control" id="email" placeholder="Email/phone number" name="email" required>
                         <p class="email_msg"></p>
@@ -65,12 +66,12 @@
                     <div class="mb-3">                        
                         <label for="psw" class="form-label"><b>Password</b></label>
                         <input type="password" class="form-control" id="password" placeholder="Enter Password" name="psw" required>
-                        <i name="vis_psw" title="Show Password" class="glyphicon glyphicon-eye-close p-2"></i>
+                        <i name="vis_psw" title="Show Password" class="bi bi-eye-slash-fill p-2"></i>
                         <p class="psw_msg"></p>
                     </div>
                     <div class="">
-                        <label class="form-check-label">
-                        <input type="checkbox"class="form-check-input" checked="checked" name="remember"> Remember me
+                        <label for="remember" class="form-label">
+                        <input type="checkbox" name="remember"> Remember me
                         </label>
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>

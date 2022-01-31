@@ -1,6 +1,6 @@
 
 
-$("#lselect").click(function(){
+$("#lselect").on("click", function(){
     $("#signup-div").hide();
     $("[name='l_form']").trigger("reset");
     document.getElementsByClassName("email_msg")[1].innerHTML="";
@@ -8,7 +8,7 @@ $("#lselect").click(function(){
     $("#login-div").show();
 });
 
-$("#sselect").click(function(){
+$("#sselect").on("click", function(){
     $("#login-div").hide();
     $("[name='s_form']").trigger("reset");
     document.getElementsByClassName("uname_msg")[0].innerHTML="";
@@ -17,42 +17,47 @@ $("#sselect").click(function(){
     $("#signup-div").show();
 });
 
-$(document).ready(function(){
+$(function(){
     
-    $("[name='vis_psw']").click(function(){
-        if ($("[name='vis_psw']").attr("class")=="glyphicon glyphicon-eye-open p-2")
-        {   
+    $("[name='vis_psw']").on("click",function(){
+        if ($("[name='vis_psw']").attr("class")=="bi bi-eye-fill p-2")
+        {
             $("[name='psw']").attr("type","password");
-            $("[name='vis_psw']").attr("class","glyphicon glyphicon-eye-close p-2");
+            $("[name='vis_psw']").attr("class","bi bi-eye-slash-fill p-2");
             $("[name='vis_psw']").attr("title","Show Password");
+            
         }
         else
         {
             $("[name='psw']").attr("type","text");
-            $("[name='vis_psw']").attr("class","glyphicon glyphicon-eye-open p-2");
+            $("[name='vis_psw']").attr("class","bi bi-eye-fill p-2");
             $("[name='vis_psw']").attr("title","Hide Password");
         }
     });
 });
 
-$("#signup-div").submit(function(e) {
-    e.preventDefault();
+$("#signup-div").on("submit",function(e) {
+    e.preventDefault();    
+    $.fn.validateForm("s_form");
 });
 
-$("#login-div").submit(function(e) {
+$("#login-div").on("submit",function(e) {
     e.preventDefault();
+    $.fn.validateForm("l_form");
 });
 
 
-function validateForm(f_name) {
+
+
+$.fn.validateForm= function(f_name) {
     var i;
     if (f_name=="s_form")
     {
         var uname = document.forms["s_form"]["uname"].value;
         var email = document.forms["s_form"]["new_email"].value;
         var psw = document.forms["s_form"]["new_password"].value;
-        var only_spaces = uname.match(/[ \n\r\t\f]+/g).toString().length;
-        var test1 = uname.match(/\W/g).toString()!=uname.match(/\s/g).toString();
+        var only_spaces = String(uname.match(/[ \n\r\t\f]+/g)).length;
+        var pat1 = /^\w+\s+/g;
         i=0;
     }
     
@@ -64,7 +69,7 @@ function validateForm(f_name) {
     let check_email = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/g.test(email);
     let test2 = /[ \n\r\t\f]+/g.test(psw);
     if (f_name=="s_form") {
-        if (/\d/g.test(uname)==true || test1 || uname.length==only_spaces)
+        if (/\d/g.test(uname)==true || pat1.test(uname)==false || uname.length==only_spaces)
         {
             document.getElementsByClassName("uname_msg")[i].innerHTML="Please enter valid name";
         }
