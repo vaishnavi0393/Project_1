@@ -34,21 +34,24 @@
         <div id="signup-div" class="container mt-3">
             <h3>Sign Up</h3>
             <form  name="s_form" action="" method="">
-                    <div class="mb-3">
-                        <label for="uname" class="form-label"><b>Name</b></label>
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="uname" placeholder="Name" name="uname" required>
+                        <label for="uname"><b>Name</b></label>
                         <p class="uname_msg"></p>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label"><b>Email / Phone Number</b></label>
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="new_email" placeholder="Email/phone number" name="email" required>
+                        <label for="email"><b>Email / Phone Number</b></label>
                         <p class="email_msg"></p>
                     </div>
-                    <div class="mb-3">
-                        <label for="psw" class="form-label"><b>Password</b></label>
+                    <div class="input-group form-floating mb-3">
                         <input type="password" class="form-control" id="new_password" placeholder="Create Password" name="psw" required>
-                            <i name="vis_psw" title="Show Password" class="bi bi-eye-slash-fill p-2"></i>
+                        <label for="psw" ><b>Password</b></label>  
+                        <span class="input-group-text"> 
+                        <i name="vis_psw" title="Show Password" class="bi bi-eye-slash-fill p-2"></i>
+                        </span>
                         <p class="psw_msg"></p>
+
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Sign up</button>
@@ -58,15 +61,17 @@
         <div id="login-div" class="container mt-3">
             <h3>Login</h3>
             <form name="l_form" action="" method="">
-                    <div class="mb-3">
-                        <label for="email" class="form-label"><b>Email / Phone Number</b></label>
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="email" placeholder="Email/phone number" name="email" required>
+                        <label for="email"><b>Email / Phone Number</b></label>
                         <p class="email_msg"></p>
                     </div>
-                    <div class="mb-3">                        
-                        <label for="psw" class="form-label"><b>Password</b></label>
+                    <div class="input-group form-floating mb-3">                        
                         <input type="password" class="form-control" id="password" placeholder="Enter Password" name="psw" required>
+                        <label for="psw"><b>Password</b></label>
+                        <span class="input-group-text">
                         <i name="vis_psw" title="Show Password" class="bi bi-eye-slash-fill p-2"></i>
+                        </span>
                         <p class="psw_msg"></p>
                     </div>
                     <div class="">
